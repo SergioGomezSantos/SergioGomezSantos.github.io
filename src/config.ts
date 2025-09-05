@@ -1,5 +1,5 @@
 export const SITE = {
-    website: "https://SergioGomezSantos.github.io",
+    website: "https://sergiogomezsantos.github.io",
     title: "Portfolio",
     description: "Portfolio and Resume CV built with Astro",
     tags: ["Portfolio", "Resume", "CV", "Astro"],
