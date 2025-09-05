@@ -1,0 +1,199 @@
+---
+title: Staff Management
+summary: Manage Employee Hours and Vacation Records using Calendars and Departments.  
+tags:
+    - PHP
+    - Laravel
+    - filamentPHP
+startDate: 2025-07-15
+endDate: 2025-07-30
+author: Sergio Gómez Santos
+url: https://github.com/SergioGomezSantos/staff-management
+cover: './images/staff-management/admin/Timesheets.PNG'
+ogImage: './images/staff-management/admin/Timesheets.PNG'
+---
+
+## Table of Contents
+1. [Overview](#overview)
+2. [Features](#features)
+3. [Super Admin](#super-admin)
+4. [Admin](#admin)
+5. [Personal](#personal)
+6. [Emails and Notifications](#emails-and-notifications)
+7. [Extras](#extras)
+
+---
+
+## Overview
+This is a web application for managing Employee Hours and Vacation Records using Calendars and Departments.  
+The web app is built using: [filamentPHP](https://filamentphp.com)
+
+---
+
+## Features ✨
+The system has 3 types of users with different roles and 2 panels located in '/admin' and '/personal':
+
+- **Super Admin**:
+    - Full permissions.
+
+- **Admin**:
+    - Permissions for CRUD (Create, Read, Update, Delete) of all resources except Roles.
+    - Access to the Admin panel and their own Personal panel as a user.
+
+- **Personal**:
+    - Access and permissions only over their own records.
+    - CRUD on Timesheets and access to custom buttons for ease of use.
+    - CRUD on Holidays. They can only edit if the status is "pending."
+
+---
+
+## Super Admin
+
+<details>
+<summary><strong>Roles</strong></summary>
+
+![roles](./images/staff-management/super_admin/Roles.PNG)  
+![roles](./images/staff-management/super_admin/Roles%20Form.PNG)
+
+Permissions are managed using the **Shield Plugin** (link at the end).
+
+</details>
+
+---
+
+## Admin
+
+<details>
+<summary><strong>Dashboard</strong></summary>
+
+The **Dashboard** provides various utility widgets for a quick overview of important admin-related tasks.  
+The charts have functional filters to change search ranges between week/month/year...
+![Dashboard](./images/staff-management/admin/Dashboard.PNG)
+
+</details>
+
+<details>
+<summary><strong>Timesheets</strong></summary>
+
+![Timesheets](./images/staff-management/admin/Timesheets.PNG)
+
+Example of filtering in Timesheets:
+![Timesheets Filter](./images/staff-management/admin/Timesheets%20Filter.PNG)
+
+</details>
+
+<details>
+<summary><strong>Holidays</strong></summary>
+
+![Holidays](./images/staff-management/admin/Holidays.PNG)
+
+</details>
+
+<details>
+<summary><strong>Employees</strong></summary>
+
+**Admins** cannot view **Super Admin Users**.
+![Employees](./images/staff-management/admin/Employees.PNG)  
+
+The selectors for **State** and **City** automatically filter based on the selected **Country** and **State**.
+![Employees Form](./images/staff-management/admin/Employees%20Form.PNG)
+
+</details>
+
+<details>
+<summary><strong>Departments</strong></summary>
+
+The table shows a count of **Users** for each **Department**.
+![Departments](./images/staff-management/admin/Departments.PNG)
+
+</details>
+
+<details>
+<summary><strong>Calendars</strong></summary>
+
+**Calendars** have an "active" field. By default, all new entries for **Timesheets**/**Holidays** use the active **Calendar**.
+![Calendars](./images/staff-management/admin/Calendars.PNG)
+
+</details>
+
+---
+
+## Personal
+
+<details>
+<summary><strong>Dashboard</strong></summary>
+
+The **Dashboard** provides various utility widgets for a quick overview of the most important user-related tasks.
+![Dashboard](./images/staff-management/personal/Dashboard.PNG)
+
+</details>
+
+<details>
+<summary><strong>Timesheets</strong></summary>
+
+The top buttons change depending on the last entry, allowing users to start/stop work or take breaks.
+![Timesheets](./images/staff-management/personal/Timesheets.PNG)
+
+</details>
+
+<details>
+<summary><strong>Holidays</strong></summary>
+
+**Holidays** can only be edited/deleted if their status is still "pending".
+![Holidays](./images/staff-management/personal/Holidays.PNG)
+
+**User** functionalities are presented in modals rather than separate pages.
+![Holidays Modal](./images/staff-management/personal/Holidays%20Modal.PNG)
+
+</details>
+
+---
+
+## Emails and Notifications
+
+<details>
+<summary><strong>Notification</strong></summary>
+
+Whenever a resource is created/edited/deleted, a temporary notification appears on the page to inform the user.  
+For **Holidays**, creating/editing automatically sends email notifications.
+![Notification](./images/staff-management/email/Notification.PNG)
+
+</details>
+
+<details>
+<summary><strong>Emails</strong></summary>
+
+![New](./images/staff-management/email/New.PNG)  
+![Updated](./images/staff-management/email/Updated.PNG)  
+![Resolved](./images/staff-management/email/Resolved.PNG)
+
+</details>
+
+---
+
+## Extras
+
+<details>
+<summary><strong>altwaireb/laravel-countries</strong></summary>
+
+To populate the database with **Country**/**State**/**City**, I used:  
+[altwaireb/laravel-countries](https://packagist.org/packages/altwaireb/laravel-countries)
+
+</details>
+
+<details>
+<summary><strong>Mailer</strong></summary>
+
+For email testing, I used [Mailtrap](https://mailtrap.io)
+
+</details>
+
+<details>
+<summary><strong>Plugins</strong></summary>
+
+- For assigning permissions and roles: [Shield](https://filamentphp.com/plugins/bezhansalleh-shield)  
+- For exporting to Excel: [Excel](https://filamentphp.com/plugins/pxlrbt-excel)
+
+</details>
+
+---

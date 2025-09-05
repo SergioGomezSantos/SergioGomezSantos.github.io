@@ -1,0 +1,25 @@
+---
+// component imports
+import {Icon} from "astro-icon/components";
+
+interface SkillCardProps {
+    name: string;
+    level: string;
+    description: string;
+    showDescription?: boolean;
+}
+
+const {
+    name,
+    level,
+    description,
+    showDescription = true,
+} = Astro.props as SkillCardProps;
+
+---
+
+<div class="flex items-center justify-center gap-2 h-skill-icon bg-white dark:bg-n700 p-4 rounded-md">
+    <h3 class="text-lg font-bold">{name}</h3>
+    <p> | </p>
+    <h3 class="text-sm text-primary-light dark:text-primary-dark">{level}</h3>
+</div>
